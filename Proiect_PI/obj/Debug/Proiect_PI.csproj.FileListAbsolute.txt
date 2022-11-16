@@ -1,0 +1,11 @@
+C:\VS Projects\Proiect_PI\Proiect_PI\bin\Debug\Proiect_PI.exe.config
+C:\VS Projects\Proiect_PI\Proiect_PI\bin\Debug\Proiect_PI.exe
+C:\VS Projects\Proiect_PI\Proiect_PI\bin\Debug\Proiect_PI.pdb
+C:\VS Projects\Proiect_PI\Proiect_PI\obj\Debug\Proiect_PI.csproj.AssemblyReference.cache
+C:\VS Projects\Proiect_PI\Proiect_PI\obj\Debug\Proiect_PI.csproj.SuggestedBindingRedirects.cache
+C:\VS Projects\Proiect_PI\Proiect_PI\obj\Debug\Proiect_PI.Properties.Resources.resources
+C:\VS Projects\Proiect_PI\Proiect_PI\obj\Debug\Proiect_PI.csproj.GenerateResource.cache
+C:\VS Projects\Proiect_PI\Proiect_PI\obj\Debug\Proiect_PI.csproj.CoreCompileInputs.cache
+C:\VS Projects\Proiect_PI\Proiect_PI\obj\Debug\Proiect_PI.exe
+C:\VS Projects\Proiect_PI\Proiect_PI\obj\Debug\Proiect_PI.pdb
+C:\VS Projects\Proiect_PI\Proiect_PI\obj\Debug\Proiect_PI.Form1.resources
