@@ -14,14 +14,13 @@ namespace Proiect_PI
     public partial class Form1 : Form
     {
         Image image;
-        Boolean opened = false;
+        bool opened = false;
+        bool sidebarExpand = true;
+        float contrast = 0;
 
         public Form1()
         {
             InitializeComponent();
-        }
-        private void Form1_Load(object sender, EventArgs e)
-        {
         }
 
         private void button_open_Click(object sender, EventArgs e)
@@ -44,21 +43,22 @@ namespace Proiect_PI
             {
                 if (opened)
                 {
-                    if (saveFileDialog1.FileName.Substring(saveFileDialog1.FileName.Length - 3).ToLower() == "bmp")
+                    switch (saveFileDialog1.FileName.Substring(saveFileDialog1.FileName.Length - 3).ToLower())
                     {
-                        image.Save(saveFileDialog1.FileName, ImageFormat.Bmp);
-                    }
-                    if (saveFileDialog1.FileName.Substring(saveFileDialog1.FileName.Length - 3).ToLower() == "jpg")
-                    {
-                        image.Save(saveFileDialog1.FileName, ImageFormat.Jpeg);
-                    }
-                    if (saveFileDialog1.FileName.Substring(saveFileDialog1.FileName.Length - 3).ToLower() == "png")
-                    {
-                        image.Save(saveFileDialog1.FileName, ImageFormat.Png);
-                    }
-                    if (saveFileDialog1.FileName.Substring(saveFileDialog1.FileName.Length - 3).ToLower() == "gif")
-                    {
-                        image.Save(saveFileDialog1.FileName, ImageFormat.Gif);
+                        case "bmp":
+                            pictureBox1.Image.Save(saveFileDialog1.FileName, ImageFormat.Bmp);
+                            break;
+                        case "jpg":
+                            pictureBox1.Image.Save(saveFileDialog1.FileName, ImageFormat.Jpeg);
+                            break;
+                        case "png":
+                            pictureBox1.Image.Save(saveFileDialog1.FileName, ImageFormat.Png);
+                            break;
+                        case "gif":
+                            pictureBox1.Image.Save(saveFileDialog1.FileName, ImageFormat.Gif);
+                            break;
+                        default:
+                            break;
                     }
                 }
             }
@@ -66,6 +66,60 @@ namespace Proiect_PI
             {
                 MessageBox.Show("You need to open an image first!");
             }
+        }
+
+        private void sidebarTimer_Tick(object sender, EventArgs e)
+        {
+            if(sidebarExpand)
+            {
+                sidebar.Width -= 10;
+                if(sidebar.Width == sidebar.MinimumSize.Width)
+                {
+                    sidebarExpand = false;
+                    sidebarTimer.Stop();
+                }
+            }
+            else
+            {
+                sidebar.Width += 10;
+                if(sidebar.Width == sidebar.MaximumSize.Width)
+                {
+                    sidebarExpand = true;
+                    sidebarTimer.Stop();
+                }
+            }
+        }
+
+        private void menuButton_Click(object sender, EventArgs e)
+        {
+            sidebarTimer.Start();
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            while(pictureBox1.Image == null)
+            {
+                MessageBox.Show("Please open an image first.");
+                button_open_Click(sender, e);
+            }
+
+            contrastValue.Text = trackBar1.Value.ToString();
+            contrast = 0.04f * trackBar1.Value;
+
+            Bitmap bm = new Bitmap(image.Width, image.Height);
+            Graphics g = Graphics.FromImage(bm);
+            ImageAttributes ia = new ImageAttributes();
+            ColorMatrix colorMatrix = new ColorMatrix(new float[][] { 
+                                                     new float[] { contrast, 0f, 0f, 0f, 0f },
+                                                     new float[] { 0f, contrast, 0f, 0f, 0f },
+                                                     new float[] { 0f, 0f, contrast, 0f, 0f },
+                                                     new float[] { 0f, 0f, 0f, 1f, 0f },
+                                                     new float[] { 0.001f, 0.001f, 0.001f, 0f, 1f }});
+            ia.SetColorMatrix(colorMatrix);
+            g.DrawImage(image, new Rectangle(0, 0, image.Width, image.Height), 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, ia);
+            g.Dispose();
+            ia.Dispose();
+            pictureBox1.Image= bm;
         }
     }
 }
