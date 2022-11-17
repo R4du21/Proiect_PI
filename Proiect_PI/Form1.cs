@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Proiect_PI
@@ -26,19 +20,21 @@ namespace Proiect_PI
         {
             OFormatValue.Text = openFileDialog1.FileName.Substring(openFileDialog1.FileName.Length - 3).ToLower();
             OPixelValue.Text = image.PixelFormat.ToString();
-            OWidthValue.Text = image.Width.ToString();
-            OHeightValue.Text = image.Height.ToString();
+            OWidthValue.Text = image.Width.ToString() + " px";
+            OHeightValue.Text = image.Height.ToString() + " px";
 
             MFormatValue.Text = openFileDialog1.FileName.Substring(openFileDialog1.FileName.Length - 3).ToLower();
             MPixelValue.Text = image.PixelFormat.ToString();
-            MWidthValue.Text = image.Width.ToString();
-            MHeightValue.Text = image.Height.ToString();
+            MWidthValue.Text = image.Width.ToString() + " px";
+            MHeightValue.Text = image.Height.ToString() + " px";
         }
         #endregion
 
         public Form1()
         {
             InitializeComponent();
+            renameFileLabel.Hide();
+            renameTextBox.Hide();
         }
 
         private void button_open_Click(object sender, EventArgs e)
@@ -62,6 +58,8 @@ namespace Proiect_PI
                     pictureBox4.Image = image;
                     opened = true;
                     ImagesValues();
+                    renameFileLabel.Show();
+                    renameTextBox.Show();
                 }
             }
         }
@@ -130,7 +128,7 @@ namespace Proiect_PI
             if (opened)
             {
                 contrastValue.Text = trackBar1.Value.ToString();
-                contrast = 0.04f * trackBar1.Value;
+                contrast = 0.08f * trackBar1.Value;
 
                 Bitmap bm = new Bitmap(image.Width, image.Height);
                 Graphics g = Graphics.FromImage(bm);
@@ -164,5 +162,38 @@ namespace Proiect_PI
         {
             button_save_Click(sender, e);
         }
+        private void renameFileButton_Click(object sender, EventArgs e)
+        {
+            button_rename_Click(sender, e);
+        }
+
+        private void button_rename_Click(object sender, EventArgs e)
+        {
+            if(opened && renameTextBox.Text != string.Empty)
+            {
+                if(renameTextBox.Text.Substring(renameTextBox.Text.Length - 3).ToLower() == "jpg" ||
+                   renameTextBox.Text.Substring(renameTextBox.Text.Length - 3).ToLower() == "bmp" ||
+                   renameTextBox.Text.Substring(renameTextBox.Text.Length - 3).ToLower() == "png" ||
+                   renameTextBox.Text.Substring(renameTextBox.Text.Length - 3).ToLower() == "gif")
+                {
+                    var oldFileName = openFileDialog1.FileName;
+                    var path = "C:\\VS Projects\\Proiect_PI\\Proiect_PI\\images\\";
+                    image.Dispose();
+                    File.Move(oldFileName, path + renameTextBox.Text);
+                    MessageBox.Show("File renamed successfully!");
+                    renameTextBox.Text = string.Empty;
+                }
+                else
+                {
+                    MessageBox.Show("Please enter an image format. JPG | BMP | PNG | GIF");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please open an image first or enter a new name for the file.");
+            }
+        }
+
+
     }
 }

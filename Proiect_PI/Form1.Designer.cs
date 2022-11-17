@@ -40,10 +40,13 @@
             this.menuButton = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.openFileButton = new System.Windows.Forms.PictureBox();
+            this.openFilePicture = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.saveFileButton = new System.Windows.Forms.PictureBox();
+            this.saveFilePicture = new System.Windows.Forms.PictureBox();
             this.button_save = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.renameFileButton = new System.Windows.Forms.PictureBox();
+            this.button_rename = new System.Windows.Forms.Button();
             this.sidebarTimer = new System.Windows.Forms.Timer(this.components);
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.label2 = new System.Windows.Forms.Label();
@@ -69,14 +72,18 @@
             this.MWidthValue = new System.Windows.Forms.Label();
             this.MHeightValue = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.renameFileLabel = new System.Windows.Forms.Label();
+            this.renameTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.openFileButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.openFilePicture)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.saveFileButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.saveFilePicture)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.renameFileButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -102,14 +109,14 @@
             // button_open
             // 
             this.button_open.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_open.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_open.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_open.ForeColor = System.Drawing.Color.Transparent;
             this.button_open.ImageAlign = System.Drawing.ContentAlignment.TopRight;
             this.button_open.Location = new System.Drawing.Point(-3, -2);
             this.button_open.Name = "button_open";
             this.button_open.Size = new System.Drawing.Size(244, 44);
             this.button_open.TabIndex = 3;
-            this.button_open.Text = "                    Open";
+            this.button_open.Text = "                     Open";
             this.button_open.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_open.UseVisualStyleBackColor = true;
             this.button_open.Click += new System.EventHandler(this.button_open_Click);
@@ -120,6 +127,7 @@
             this.sidebar.Controls.Add(this.panel1);
             this.sidebar.Controls.Add(this.panel2);
             this.sidebar.Controls.Add(this.panel3);
+            this.sidebar.Controls.Add(this.panel4);
             this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidebar.Location = new System.Drawing.Point(0, 0);
             this.sidebar.MaximumSize = new System.Drawing.Size(236, 631);
@@ -141,11 +149,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(61, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 21);
+            this.label1.Size = new System.Drawing.Size(54, 21);
             this.label1.TabIndex = 6;
             this.label1.Text = "Menu";
             // 
@@ -169,48 +177,48 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.openFileButton);
+            this.panel2.Controls.Add(this.openFilePicture);
             this.panel2.Controls.Add(this.button_open);
             this.panel2.Location = new System.Drawing.Point(3, 108);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(233, 38);
             this.panel2.TabIndex = 6;
             // 
-            // openFileButton
+            // openFilePicture
             // 
-            this.openFileButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.openFileButton.Image = ((System.Drawing.Image)(resources.GetObject("openFileButton.Image")));
-            this.openFileButton.Location = new System.Drawing.Point(9, 2);
-            this.openFileButton.Name = "openFileButton";
-            this.openFileButton.Size = new System.Drawing.Size(36, 33);
-            this.openFileButton.TabIndex = 6;
-            this.openFileButton.TabStop = false;
-            this.openFileButton.Click += new System.EventHandler(this.openFileButton_Click);
+            this.openFilePicture.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.openFilePicture.Image = ((System.Drawing.Image)(resources.GetObject("openFilePicture.Image")));
+            this.openFilePicture.Location = new System.Drawing.Point(9, 2);
+            this.openFilePicture.Name = "openFilePicture";
+            this.openFilePicture.Size = new System.Drawing.Size(36, 33);
+            this.openFilePicture.TabIndex = 6;
+            this.openFilePicture.TabStop = false;
+            this.openFilePicture.Click += new System.EventHandler(this.openFileButton_Click);
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.saveFileButton);
+            this.panel3.Controls.Add(this.saveFilePicture);
             this.panel3.Controls.Add(this.button_save);
             this.panel3.Location = new System.Drawing.Point(3, 152);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(233, 40);
             this.panel3.TabIndex = 6;
             // 
-            // saveFileButton
+            // saveFilePicture
             // 
-            this.saveFileButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.saveFileButton.Image = ((System.Drawing.Image)(resources.GetObject("saveFileButton.Image")));
-            this.saveFileButton.Location = new System.Drawing.Point(9, 4);
-            this.saveFileButton.Name = "saveFileButton";
-            this.saveFileButton.Size = new System.Drawing.Size(36, 34);
-            this.saveFileButton.TabIndex = 6;
-            this.saveFileButton.TabStop = false;
-            this.saveFileButton.Click += new System.EventHandler(this.saveFileButton_Click);
+            this.saveFilePicture.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.saveFilePicture.Image = ((System.Drawing.Image)(resources.GetObject("saveFilePicture.Image")));
+            this.saveFilePicture.Location = new System.Drawing.Point(9, 4);
+            this.saveFilePicture.Name = "saveFilePicture";
+            this.saveFilePicture.Size = new System.Drawing.Size(36, 34);
+            this.saveFilePicture.TabIndex = 6;
+            this.saveFilePicture.TabStop = false;
+            this.saveFilePicture.Click += new System.EventHandler(this.saveFileButton_Click);
             // 
             // button_save
             // 
             this.button_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_save.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_save.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_save.ForeColor = System.Drawing.Color.White;
             this.button_save.ImageAlign = System.Drawing.ContentAlignment.TopRight;
             this.button_save.Location = new System.Drawing.Point(-2, -5);
@@ -221,6 +229,41 @@
             this.button_save.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_save.UseVisualStyleBackColor = true;
             this.button_save.Click += new System.EventHandler(this.button_save_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.renameFileButton);
+            this.panel4.Controls.Add(this.button_rename);
+            this.panel4.Location = new System.Drawing.Point(3, 198);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(241, 41);
+            this.panel4.TabIndex = 31;
+            // 
+            // renameFileButton
+            // 
+            this.renameFileButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.renameFileButton.Image = ((System.Drawing.Image)(resources.GetObject("renameFileButton.Image")));
+            this.renameFileButton.Location = new System.Drawing.Point(9, 3);
+            this.renameFileButton.Name = "renameFileButton";
+            this.renameFileButton.Size = new System.Drawing.Size(36, 40);
+            this.renameFileButton.TabIndex = 30;
+            this.renameFileButton.TabStop = false;
+            this.renameFileButton.Click += new System.EventHandler(this.renameFileButton_Click);
+            // 
+            // button_rename
+            // 
+            this.button_rename.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_rename.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_rename.ForeColor = System.Drawing.Color.White;
+            this.button_rename.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.button_rename.Location = new System.Drawing.Point(-1, -5);
+            this.button_rename.Name = "button_rename";
+            this.button_rename.Size = new System.Drawing.Size(236, 51);
+            this.button_rename.TabIndex = 5;
+            this.button_rename.Text = "                     Rename";
+            this.button_rename.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_rename.UseVisualStyleBackColor = true;
+            this.button_rename.Click += new System.EventHandler(this.button_rename_Click);
             // 
             // sidebarTimer
             // 
@@ -464,12 +507,33 @@
             this.pictureBox2.TabIndex = 29;
             this.pictureBox2.TabStop = false;
             // 
+            // renameFileLabel
+            // 
+            this.renameFileLabel.AutoSize = true;
+            this.renameFileLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.renameFileLabel.Location = new System.Drawing.Point(246, 500);
+            this.renameFileLabel.Name = "renameFileLabel";
+            this.renameFileLabel.Size = new System.Drawing.Size(127, 17);
+            this.renameFileLabel.TabIndex = 30;
+            this.renameFileLabel.Text = "Rename original file:";
+            // 
+            // renameTextBox
+            // 
+            this.renameTextBox.BackColor = System.Drawing.Color.White;
+            this.renameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.renameTextBox.Location = new System.Drawing.Point(379, 500);
+            this.renameTextBox.Name = "renameTextBox";
+            this.renameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.renameTextBox.TabIndex = 31;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RoyalBlue;
             this.ClientSize = new System.Drawing.Size(969, 631);
+            this.Controls.Add(this.renameTextBox);
+            this.Controls.Add(this.renameFileLabel);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.MHeightValue);
             this.Controls.Add(this.MWidthValue);
@@ -497,7 +561,7 @@
             this.Controls.Add(this.sidebar);
             this.Controls.Add(this.pictureBox1);
             this.ForeColor = System.Drawing.Color.Transparent;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Proiect Procesarea Imaginilor";
@@ -507,9 +571,11 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).EndInit();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.openFileButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.openFilePicture)).EndInit();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.saveFileButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.saveFilePicture)).EndInit();
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.renameFileButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -526,11 +592,11 @@
         private System.Windows.Forms.FlowLayoutPanel sidebar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox openFileButton;
+        private System.Windows.Forms.PictureBox openFilePicture;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Button button_save;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.PictureBox saveFileButton;
+        private System.Windows.Forms.PictureBox saveFilePicture;
         private System.Windows.Forms.PictureBox menuButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer sidebarTimer;
@@ -558,6 +624,11 @@
         private System.Windows.Forms.Label MWidthValue;
         private System.Windows.Forms.Label MHeightValue;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button button_rename;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.PictureBox renameFileButton;
+        private System.Windows.Forms.Label renameFileLabel;
+        private System.Windows.Forms.TextBox renameTextBox;
     }
 }
 
