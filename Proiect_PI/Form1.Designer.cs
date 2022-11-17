@@ -71,9 +71,11 @@
             this.MPixelValue = new System.Windows.Forms.Label();
             this.MWidthValue = new System.Windows.Forms.Label();
             this.MHeightValue = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.arrowPicture = new System.Windows.Forms.PictureBox();
             this.renameFileLabel = new System.Windows.Forms.Label();
             this.renameTextBox = new System.Windows.Forms.TextBox();
+            this.loadingPicture1 = new System.Windows.Forms.PictureBox();
+            this.loadingPicture2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -86,7 +88,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.renameFileButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.arrowPicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loadingPicture1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loadingPicture2)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -498,14 +502,14 @@
             this.MHeightValue.TabIndex = 28;
             this.MHeightValue.Text = "-";
             // 
-            // pictureBox2
+            // arrowPicture
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(570, 152);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(69, 67);
-            this.pictureBox2.TabIndex = 29;
-            this.pictureBox2.TabStop = false;
+            this.arrowPicture.Image = ((System.Drawing.Image)(resources.GetObject("arrowPicture.Image")));
+            this.arrowPicture.Location = new System.Drawing.Point(570, 152);
+            this.arrowPicture.Name = "arrowPicture";
+            this.arrowPicture.Size = new System.Drawing.Size(69, 67);
+            this.arrowPicture.TabIndex = 29;
+            this.arrowPicture.TabStop = false;
             // 
             // renameFileLabel
             // 
@@ -526,15 +530,35 @@
             this.renameTextBox.Size = new System.Drawing.Size(100, 20);
             this.renameTextBox.TabIndex = 31;
             // 
+            // loadingPicture1
+            // 
+            this.loadingPicture1.Image = ((System.Drawing.Image)(resources.GetObject("loadingPicture1.Image")));
+            this.loadingPicture1.Location = new System.Drawing.Point(357, 134);
+            this.loadingPicture1.Name = "loadingPicture1";
+            this.loadingPicture1.Size = new System.Drawing.Size(103, 85);
+            this.loadingPicture1.TabIndex = 32;
+            this.loadingPicture1.TabStop = false;
+            // 
+            // loadingPicture2
+            // 
+            this.loadingPicture2.Image = ((System.Drawing.Image)(resources.GetObject("loadingPicture2.Image")));
+            this.loadingPicture2.Location = new System.Drawing.Point(751, 134);
+            this.loadingPicture2.Name = "loadingPicture2";
+            this.loadingPicture2.Size = new System.Drawing.Size(103, 85);
+            this.loadingPicture2.TabIndex = 33;
+            this.loadingPicture2.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RoyalBlue;
             this.ClientSize = new System.Drawing.Size(969, 631);
+            this.Controls.Add(this.loadingPicture2);
+            this.Controls.Add(this.loadingPicture1);
             this.Controls.Add(this.renameTextBox);
             this.Controls.Add(this.renameFileLabel);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.arrowPicture);
             this.Controls.Add(this.MHeightValue);
             this.Controls.Add(this.MWidthValue);
             this.Controls.Add(this.MPixelValue);
@@ -578,7 +602,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.renameFileButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.arrowPicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loadingPicture1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loadingPicture2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -623,12 +649,14 @@
         private System.Windows.Forms.Label MPixelValue;
         private System.Windows.Forms.Label MWidthValue;
         private System.Windows.Forms.Label MHeightValue;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox arrowPicture;
         private System.Windows.Forms.Button button_rename;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox renameFileButton;
         private System.Windows.Forms.Label renameFileLabel;
         private System.Windows.Forms.TextBox renameTextBox;
+        private System.Windows.Forms.PictureBox loadingPicture1;
+        private System.Windows.Forms.PictureBox loadingPicture2;
     }
 }
 

@@ -2,6 +2,8 @@
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Proiect_PI
@@ -35,9 +37,12 @@ namespace Proiect_PI
             InitializeComponent();
             renameFileLabel.Hide();
             renameTextBox.Hide();
+            arrowPicture.Hide();
+            loadingPicture1.Hide();
+            loadingPicture2.Hide();
         }
 
-        private void button_open_Click(object sender, EventArgs e)
+        private async void button_open_Click(object sender, EventArgs e)
         {
             DialogResult dr = openFileDialog1.ShowDialog();
 
@@ -54,14 +59,32 @@ namespace Proiect_PI
                     {
                         sidebarTimer.Start();
                     }
+                    pictureBox1.Image = null;
+                    pictureBox4.Image = null;
+                    loadingPicture1.Show();
+                    loadingPicture2.Show();
+
+                    await Task.Run(() => LoadImages());
+                    loadingPicture1.Hide();
+                    loadingPicture2.Hide();
+
                     pictureBox1.Image = image;
                     pictureBox4.Image = image;
                     opened = true;
                     ImagesValues();
                     renameFileLabel.Show();
                     renameTextBox.Show();
+                    arrowPicture.Show();
+                    
                 }
             }
+        }
+
+        private void LoadImages()
+        {
+            Random numberInstance = new Random();
+            var number = numberInstance.Next(1000,3000);
+            Thread.Sleep(number);
         }
 
         private void button_save_Click(object sender, EventArgs e)
