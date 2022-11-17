@@ -48,24 +48,30 @@ namespace Proiect_PI
             if (dr == DialogResult.OK)
             {
                 image = Image.FromFile(openFileDialog1.FileName);
-                if (sidebar.Width == sidebar.MaximumSize.Width)
+                if (!(image.PixelFormat.ToString() == "Format24bppRgb" || image.PixelFormat.ToString() == "Format8bppIndexed"))
                 {
-                    sidebarTimer.Start();
+                    MessageBox.Show("Please choose an image that has 24 or 8 bits format.");
                 }
-                pictureBox1.Image = image;
-                pictureBox4.Image = image;
-                opened = true;
-                ImagesValues();
+                else
+                {
+                    if (sidebar.Width == sidebar.MaximumSize.Width)
+                    {
+                        sidebarTimer.Start();
+                    }
+                    pictureBox1.Image = image;
+                    pictureBox4.Image = image;
+                    opened = true;
+                    ImagesValues();
+                }
             }
         }
 
         private void button_save_Click(object sender, EventArgs e)
         {
-            DialogResult dr = saveFileDialog1.ShowDialog();
-
-            if (dr == DialogResult.OK)
+            if (opened)
             {
-                if (opened)
+                DialogResult dr = saveFileDialog1.ShowDialog();
+                if (dr == DialogResult.OK)
                 {
                     switch (saveFileDialog1.FileName.Substring(saveFileDialog1.FileName.Length - 3).ToLower())
                     {
@@ -88,7 +94,7 @@ namespace Proiect_PI
             }
             else
             {
-                MessageBox.Show("You need to open an image first!");
+                MessageBox.Show("Please open an image first.");
             }
         }
 
@@ -121,29 +127,32 @@ namespace Proiect_PI
 
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
-            while (pictureBox1.Image == null)
+            if (opened)
             {
-                MessageBox.Show("Please open an image first.");
-                button_open_Click(sender, e);
-            }
+                contrastValue.Text = trackBar1.Value.ToString();
+                contrast = 0.04f * trackBar1.Value;
 
-            contrastValue.Text = trackBar1.Value.ToString();
-            contrast = 0.04f * trackBar1.Value;
-
-            Bitmap bm = new Bitmap(image.Width, image.Height);
-            Graphics g = Graphics.FromImage(bm);
-            ImageAttributes ia = new ImageAttributes();
-            ColorMatrix colorMatrix = new ColorMatrix(new float[][] {
+                Bitmap bm = new Bitmap(image.Width, image.Height);
+                Graphics g = Graphics.FromImage(bm);
+                ImageAttributes ia = new ImageAttributes();
+                ColorMatrix colorMatrix = new ColorMatrix(new float[][] {
                                                      new float[] { contrast, 0f, 0f, 0f, 0f },
                                                      new float[] { 0f, contrast, 0f, 0f, 0f },
                                                      new float[] { 0f, 0f, contrast, 0f, 0f },
                                                      new float[] { 0f, 0f, 0f, 1f, 0f },
                                                      new float[] { 0.001f, 0.001f, 0.001f, 0f, 1f }});
-            ia.SetColorMatrix(colorMatrix);
-            g.DrawImage(image, new Rectangle(0, 0, image.Width, image.Height), 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, ia);
-            g.Dispose();
-            ia.Dispose();
-            pictureBox1.Image = bm;
+                ia.SetColorMatrix(colorMatrix);
+                g.DrawImage(image, new Rectangle(0, 0, image.Width, image.Height), 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, ia);
+                g.Dispose();
+                ia.Dispose();
+                pictureBox1.Image = bm;
+
+            }
+            else
+            {
+                MessageBox.Show("Please open an image first.");
+                button_open_Click(sender, e);
+            }
         }
 
         private void openFileButton_Click(object sender, EventArgs e)
@@ -155,7 +164,5 @@ namespace Proiect_PI
         {
             button_save_Click(sender, e);
         }
-
-        
     }
 }

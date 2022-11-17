@@ -68,6 +68,7 @@
             this.MPixelValue = new System.Windows.Forms.Label();
             this.MWidthValue = new System.Windows.Forms.Label();
             this.MHeightValue = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -78,6 +79,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.saveFileButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -453,12 +455,22 @@
             this.MHeightValue.TabIndex = 28;
             this.MHeightValue.Text = "-";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(570, 152);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(69, 67);
+            this.pictureBox2.TabIndex = 29;
+            this.pictureBox2.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RoyalBlue;
             this.ClientSize = new System.Drawing.Size(969, 631);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.MHeightValue);
             this.Controls.Add(this.MWidthValue);
             this.Controls.Add(this.MPixelValue);
@@ -500,6 +512,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.saveFileButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -544,6 +557,7 @@
         private System.Windows.Forms.Label MPixelValue;
         private System.Windows.Forms.Label MWidthValue;
         private System.Windows.Forms.Label MHeightValue;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 

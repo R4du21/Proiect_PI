@@ -165,4 +165,17 @@
   <metadata name="sidebarTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>293, 17</value>
   </metadata>
+  <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAAdcAAAHXAYySCGgAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
+        AAABgUlEQVR4Xu2aPUrFQBRG3wpcgp0gggjqFsQ/RPdhY2tnq41iYWPzXJUb8b/Rc8FAeCR3Jpli5sJ3
+        4IAEPrj3SwKZhwshhBBCCCGEENPYwxdc4o5dmMgaXuI1rtuFSOzjN/7+a3+fYy62/Ct2+Tc8wDDYXe+G
+        75xSwhWu5j8wTAlDBZi5JdzgUD5MCfbO91+BvjklbOAXDuXDlHCCY0v84AV6eHm7forNc4wlJXh5lYAq
+        AUOV8IlDS+SWMJZXCagSMEwJR1hSgpdXCagSUCWgSsAwJXjf/naA2kYPL/+OdsBqnkMcu5OPmMLL32Lz
+        eI/yPabw8nfYNN4jbEttoUcqv4nN4t05e//P0KM0XxUtj3OHD728d6jJGb40XxUtj3OHD7+897WXs3xJ
+        vipaHucOH3r51CEnNXxpvipaHucOH3r51f8P6GtL2XIepfnqPGPJ8KX56gwtMGX40nx17BG2gbvh7ctt
+        yvCl+SbYxSd8wNSPGUOU5oUQQgghhBBCzGOx+AMt8AgpiXLSjQAAAABJRU5ErkJggg==
+</value>
+  </data>
 </root>
